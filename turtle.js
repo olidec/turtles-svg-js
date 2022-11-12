@@ -8,13 +8,12 @@ var dir = {
 var currentAngle = 0;
 
 // Turning angle in degrees and measured counter-clockwise from horizontal
-var turn = function(angle){
+function turn(angle) {
   currentAngle += angle;
   currentAngle = currentAngle%360;
   var degrees = -currentAngle/180*Math.PI;
   dir.x = Math.cos(degrees);
   dir.y = Math.sin(degrees);
-  console.log(currentAngle);
 };
 
 // Drawing vs. non-drawing Movement
@@ -58,7 +57,7 @@ function draw() {
     path.getBoundingClientRect();
     // Define our transition
     path.style.transition = path.style.WebkitTransition =
-      'stroke-dashoffset 2s ease-in-out';
+      'stroke-dashoffset 3s ease-in-out';
     // Go!
     path.style.strokeDashoffset = '0';
 }

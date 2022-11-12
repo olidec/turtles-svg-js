@@ -1,5 +1,4 @@
-moveForward(40);
-turn(-45)
-moveForward(60)
-turn(45)
-moveForward(60)
+for (let i=1; i<=8; i++) {
+    moveForward(60);
+    turn(360/8);
+}
