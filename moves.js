@@ -1,6 +1,5 @@
-penUp();
-moveTo(20, 30);
-penDown();
-moveForward(20);
-
-// draw();
+moveForward(40);
+turn(-45)
+moveForward(60)
+turn(45)
+moveForward(60)

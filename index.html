@@ -14,11 +14,19 @@
         <h1>Turtle Graphics</h1>
     </div>
         <svg id="drawing" viewBox="-500 -500 1000 1000">
-            <path id="turtle" 
+            <path id="turtlepath"
+                class="path" 
                 d=""
                 stroke="black" 
+                stroke-width="2"
                 fill="none">
             </path>
+            <circle cx="0" cy="0" r="5" fill="green" id="turtle">
+                <animateMotion id="turtleanimation"
+                dur="2s"
+                repeatCount="indefinite"
+                path="" />
+            </circle>
         </svg>
     <div>
         <button type="button" onclick="draw()">Draw Your Moves</button>
