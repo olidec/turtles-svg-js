@@ -1,0 +1,10 @@
+body {
+    background-color: lightgray;
+    text-align: center;
+}
+
+svg {
+    background-color: white;
+    width: min(80vh,80vw);
+    height: min(80vh,80vw);
+}
