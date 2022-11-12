@@ -1,4 +1,5 @@
-for (let i=1; i<=8; i++) {
-    moveForward(60);
-    turn(360/8);
+// 5-pointed Star
+for (let i=1; i<=10; i++) {
+    moveForward(100);
+    turn(180-36);
 }
