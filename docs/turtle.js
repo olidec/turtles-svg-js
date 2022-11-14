@@ -47,7 +47,7 @@ function draw() {
 
     var path = document.querySelector('.path');
     var length = path.getTotalLength();
-    var time = length/200;
+    var time = length/400;
     // Clear any previous transition
     path.style.transition = path.style.WebkitTransition = 'none';
     // Set up the starting positions
