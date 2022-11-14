@@ -1,6 +1,6 @@
 // Initial Values
 var pen = true;
-var d = "M 0 0";
+var d = "M 0 0 ";
 var dir = {
   x: 1,
   y: 0
@@ -58,7 +58,9 @@ function draw() {
     path.getBoundingClientRect();
     // Define our transition
     path.style.transition = path.style.WebkitTransition =
-      `stroke-dashoffset ${time}s ease-in-out`;
+      `stroke-dashoffset ${time}s linear`;
     // Go!
     path.style.strokeDashoffset = '0';
+    turtleanimation.setAttribute("dur", `${time}s`)
+    turtleanimation.beginElement()
 }
