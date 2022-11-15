@@ -7,6 +7,10 @@ let dir = {
   y: 0
 };
 let currentAngle = 0;
+var position = {
+  x: 0,
+  y: 0
+};
 
 // Turning angle in degrees and measured counter-clockwise from horizontal
 function turn(angle) {
@@ -29,6 +33,9 @@ var penDown = function(){
 var moveForward = function (distance) {
   d += pen ? "l " : "m ";
   d += (distance * dir.x) + " " + (distance * dir.y) + " ";
+  position.x += distance*dir.x;
+  position.y += distance*dir.y;
+  
 //   moveCount++;
 }
 
@@ -36,6 +43,8 @@ var moveForward = function (distance) {
 var moveTo = function (x, y) {
   d += pen ? "L " : "M ";
   d += x + " " + y + " ";
+  position.x = x;
+  position.y = y;
 //   moveCount++;
 }
 
