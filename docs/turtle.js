@@ -22,15 +22,15 @@ function turn(angle) {
 };
 
 // Drawing vs. non-drawing Movement
-var penUp = function(){
+function penUp(){
   pen = false;
 };
-var penDown = function(){
+function penDown(){
   pen = true;
 };
 
 // Relative moves
-var moveForward = function (distance) {
+function moveForward(distance) {
   d += pen ? "l " : "m ";
   d += (distance * dir.x) + " " + (distance * dir.y) + " ";
   position.x += distance*dir.x;
@@ -40,7 +40,7 @@ var moveForward = function (distance) {
 }
 
 // Absolute moves
-var moveTo = function (x, y) {
+function moveTo(x, y) {
   d += pen ? "L " : "M ";
   d += x + " " + y + " ";
   position.x = x;
