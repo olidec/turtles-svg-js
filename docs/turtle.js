@@ -12,7 +12,7 @@ let currentAngle = 0;
 function turn(angle) {
   currentAngle += angle;
   currentAngle = currentAngle%360;
-  var degrees = -currentAngle/180*Math.PI;
+  let degrees = -currentAngle/180*Math.PI;
   dir.x = Math.cos(degrees);
   dir.y = Math.sin(degrees);
 };
@@ -46,9 +46,9 @@ function draw() {
     turtleanimation = document.getElementById("turtleanimation");
     turtleanimation.setAttribute('path',d)
 
-    var path = document.querySelector('.path');
-    var length = path.getTotalLength();
-    var time = length/400;
+    let path = document.querySelector('.path');
+    let length = path.getTotalLength();
+    let time = length/400;
     // Clear any previous transition
     path.style.transition = path.style.WebkitTransition = 'none';
     // Set up the starting positions
