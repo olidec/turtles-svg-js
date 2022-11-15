@@ -1,4 +1,4 @@
-{
+{ //block scoping
   // Initial Values
 let pen = true;
 let d = "M 0 0 ";
@@ -65,4 +65,4 @@ function draw() {
     turtleanimation.setAttribute("dur", `${time}s`)
     turtleanimation.beginElement()
 }
-}
+} // end block scoping
