@@ -1,41 +1,59 @@
-// Initial Values
-var pen = true;
-var d = "M 0 0 ";
-var dir = {
+{ //block scoping
+  // Initial Values
+let pen = true;
+let d = "M 0 0 ";
+let dir = {
   x: 1,
   y: 0
 };
-var currentAngle = 0;
+let currentAngle = 0;
+var position = {
+  x: 0,
+  y: 0
+};
 
 // Turning angle in degrees and measured counter-clockwise from horizontal
 function turn(angle) {
   currentAngle += angle;
   currentAngle = currentAngle%360;
-  var degrees = -currentAngle/180*Math.PI;
+  let degrees = -currentAngle/180*Math.PI;
   dir.x = Math.cos(degrees);
   dir.y = Math.sin(degrees);
 };
 
 // Drawing vs. non-drawing Movement
-var penUp = function(){
+function penUp(){
   pen = false;
 };
-var penDown = function(){
+function penDown(){
   pen = true;
 };
 
 // Relative moves
-var moveForward = function (distance) {
+function moveForward(distance) {
   d += pen ? "l " : "m ";
   d += (distance * dir.x) + " " + (distance * dir.y) + " ";
+  position.x += distance*dir.x;
+  position.y += distance*dir.y;
+  
 //   moveCount++;
 }
 
 // Absolute moves
-var moveTo = function (x, y) {
+function moveTo(x, y) {
   d += pen ? "L " : "M ";
   d += x + " " + y + " ";
+  position.x = x;
+  position.y = y;
 //   moveCount++;
+}
+
+function hideTurtle() {
+  document.getElementById("turtle").setAttribute("fill","transparent");
+}
+
+function showTurtle() {
+  document.getElementById("turtle").setAttribute("fill","green");
 }
 
 // Call this function to draw the path
@@ -45,9 +63,9 @@ function draw() {
     turtleanimation = document.getElementById("turtleanimation");
     turtleanimation.setAttribute('path',d)
 
-    var path = document.querySelector('.path');
-    var length = path.getTotalLength();
-    var time = length/400;
+    let path = document.querySelector('.path');
+    let length = path.getTotalLength();
+    let time = length/400;
     // Clear any previous transition
     path.style.transition = path.style.WebkitTransition = 'none';
     // Set up the starting positions
@@ -64,3 +82,4 @@ function draw() {
     turtleanimation.setAttribute("dur", `${time}s`)
     turtleanimation.beginElement()
 }
+} // end block scoping
