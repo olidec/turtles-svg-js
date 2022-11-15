@@ -39,6 +39,14 @@ var moveTo = function (x, y) {
 //   moveCount++;
 }
 
+function hideTurtle() {
+  document.getElementById("turtle").setAttribute("fill","transparent");
+}
+
+function showTurtle() {
+  document.getElementById("turtle").setAttribute("fill","green");
+}
+
 // Call this function to draw the path
 function draw() {
     turtlepath = document.getElementById("turtlepath");
