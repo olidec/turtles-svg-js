@@ -1,11 +1,12 @@
-// Initial Values
-var pen = true;
-var d = "M 0 0 ";
-var dir = {
+{
+  // Initial Values
+let pen = true;
+let d = "M 0 0 ";
+let dir = {
   x: 1,
   y: 0
 };
-var currentAngle = 0;
+let currentAngle = 0;
 
 // Turning angle in degrees and measured counter-clockwise from horizontal
 function turn(angle) {
@@ -63,4 +64,5 @@ function draw() {
     path.style.strokeDashoffset = '0';
     turtleanimation.setAttribute("dur", `${time}s`)
     turtleanimation.beginElement()
+}
 }
